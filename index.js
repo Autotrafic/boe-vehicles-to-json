@@ -1,15 +1,27 @@
-const HtmlTableToJson = require("html-table-to-json");
-var fs = require("fs");
-const table = require("./data/table");
-const manipulateHtmlTable = require("./formatters/htmlManipulation");
-const formatMultipleBrands = require("./formatters/jsManipulation");
+const readline = require("readline");
+const generateDatabase = require("./executables/generateDatabase");
+const generateHtmlFormattedTable = require("./executables/generateHtmlFormattedTable");
 
-const modifiedHtmlTable = manipulateHtmlTable(table);
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-const { results } = HtmlTableToJson.parse(table);
+const question = `Please choose an option:
+1. First step -> Generate HTML Formatted table
+2. Second step -> Generate Database
+Enter number (1 or 2): `;
 
-const databaseObject = formatMultipleBrands(results);
+rl.question(question, (answer) => {
+  if (answer === "1") {
+    generateHtmlFormattedTable();
+  } else if (answer === "2") {
+    generateDatabase();
+  } else {
+    console.log(
+      "Invalid option, please run the script again and select either 1 or 2."
+    );
+  }
 
-fs.writeFile("database.txt", modifiedHtmlTable, function(err) {
-    if(err) console.log('error', err);
+  rl.close();
 });
