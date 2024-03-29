@@ -35,7 +35,16 @@ function setUniqueBrand(carModels) {
 
   carModels.forEach((item) => {
     const { brandName, ...model } = item;
-    result.models.push({...model, value: +model.value.replace(/\./g, "")});
+    result.models.push({
+      ...model,
+      value: +model.value.replace(/\./g, ""),
+      startDate: +model.startDate,
+      endDate: +model.endDate,
+      cylindersNumber: +model.cylindersNumber,
+      cc: +model.cc,
+      cv: +model.cv,
+      kWPower: +model.kWPower,
+    });
   });
 
   return result;
