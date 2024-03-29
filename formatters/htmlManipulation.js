@@ -9,12 +9,12 @@ function manipulateHtmlTable(inputString) {
     // Append </table> back to each table string as split removes it
     tableString += "</table>";
 
-    const brandStartIndex = tableString.indexOf(`>Marca:`) + 8;
-    const brandEndIndex = tableString
-      .substring(brandStartIndex)
+    const brandNameStartIndex = tableString.indexOf(`>Marca:`) + 8;
+    const brandNameEndIndex = tableString
+      .substring(brandNameStartIndex)
       .indexOf("</th>");
 
-    const brand = tableString.substr(brandStartIndex, brandEndIndex);
+    const brandName = tableString.substr(brandNameStartIndex, brandNameEndIndex);
 
     let reducedString = tableString
       .replace(
@@ -26,8 +26,8 @@ function manipulateHtmlTable(inputString) {
         ""
       )
       .replace(
-        `<th class="cabeza_tabla" colspan="10">Marca: ${brand}</th>`,
-        '<th class="cabeza_tabla">brand</th>'
+        `<th class="cabeza_tabla" colspan="10">Marca: ${brandName}</th>`,
+        '<th class="cabeza_tabla">brandName</th>'
       )
       .replace(
         '</tr>\n        <tr>\n          <th class="cabeza_tabla">Inicio</th>',
@@ -87,7 +87,7 @@ function manipulateHtmlTable(inputString) {
 
       let formattedModel = modelString.replace(
         '<td class="cuerpo_tabla_izq">',
-        `<td class="cuerpo_tabla_centro">${brand}</td>\n    <td class="cuerpo_tabla_izq">`
+        `<td class="cuerpo_tabla_centro">${brandName}</td>\n    <td class="cuerpo_tabla_izq">`
       );
 
       return formattedModel;
