@@ -46,6 +46,10 @@ function manipulateHtmlTable(inputString) {
         '<th class="cabeza_tabla">value</th>'
       )
       .replace(
+        /<th class="cabeza_tabla"\s+rowspan="2"\s*>[\s\S]*?<\/th>/,
+        '<th class="cabeza_tabla">value</th>'
+      )
+      .replace(
         '<th class="cabeza_tabla">Inicio</th>',
         '<th class="cabeza_tabla">startDate</th>'
       )

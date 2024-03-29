@@ -35,7 +35,7 @@ function setUniqueBrand(carModels) {
 
   carModels.forEach((item) => {
     const { brand, ...model } = item;
-    result.models.push(model);
+    result.models.push({...model, value: +model.value.replace(/\./g, "")});
   });
 
   return result;
