@@ -51,11 +51,11 @@ function manipulateHtmlTable(inputString) {
       )
       .replace(
         '<th class="cabeza_tabla">Inicio</th>',
-        '<th class="cabeza_tabla">startDate</th>'
+        '<th class="cabeza_tabla">startYear</th>'
       )
       .replace(
         '<th class="cabeza_tabla">Fin</th>',
-        '<th class="cabeza_tabla">endDate</th>'
+        '<th class="cabeza_tabla">endYear</th>'
       )
       .replace(
         '<th class="cabeza_tabla">C.C.</th>',

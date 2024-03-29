@@ -18,3 +18,6 @@
 5. Run the second step running `npm run start`
 
 6. Enjoy of your JSON file! 🚀
+
+
+* IMPORTANT: When copying the xml car tables, NOT copy any space at the beginning, so the copy shoud start with: `<table...`

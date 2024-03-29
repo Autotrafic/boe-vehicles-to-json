@@ -1,3 +1,5 @@
+const { ACTUAL_YEAR } = require("../constants");
+
 function orderValuesWithProperties(carModel) {
   if (!carModel) return;
 
@@ -38,8 +40,8 @@ function setUniqueBrand(carModels) {
     result.models.push({
       ...model,
       value: +model.value.replace(/\./g, ""),
-      startDate: +model.startDate,
-      endDate: +model.endDate,
+      startYear: +model.startYear,
+      endYear: model.endYear === "" ? ACTUAL_YEAR : +model.endYear,
       cylindersNumber: +model.cylindersNumber,
       cc: +model.cc,
       cv: +model.cv,
