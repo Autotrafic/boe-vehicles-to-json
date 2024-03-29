@@ -1,14 +1,14 @@
 function orderValuesWithProperties(carModel) {
   if (!carModel) return;
 
-  const { brand, model, ...rest } = carModel;
+  const { brand, modelName, ...rest } = carModel;
 
   const keys = Object.keys(rest);
   const values = Object.values(rest);
 
   const shiftedValues = values.slice(-2).concat(values.slice(0, -2));
 
-  const shiftedObj = { brand, model };
+  const shiftedObj = { brand, modelName };
   keys.forEach((key, index) => {
     shiftedObj[key] = shiftedValues[index];
   });

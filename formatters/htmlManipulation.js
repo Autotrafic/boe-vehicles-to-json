@@ -35,7 +35,7 @@ function manipulateHtmlTable(inputString) {
       )
       .replace(
         '</tr>\n        <tr>\n          <th class="cabeza_tabla" rowspan="2">Modelo-Tipo</th>',
-        '  <th class="cabeza_tabla">model</th>'
+        '  <th class="cabeza_tabla">modelName</th>'
       )
       .replace(
         '<th class="cabeza_tabla" rowspan="2">cv</th>',
